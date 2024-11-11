@@ -622,15 +622,46 @@
      </div>
 
     <!-- Preview Modal -->
-     <div id="preview-modal" role="dialog" class="fixed hidden inset-0 flex items-center justify-center bg-black bg-opacity-50">
-        <div class="w-full max-w-md h-96 rounded-2xl bg-white overflow-hidden px-5 modal-content">
-             <div class="flex pt-8 pb-1 border-b-2 justify-center items-center">
-                <h2 class="text-lg text-c-black font-medium">Dots</h2>
+     <div id="preview-modal" role="dialog" class="fixed inset-0 hidden flex items-center justify-center bg-black bg-opacity-50">
+        <div class="w-full max-w-md rounded-2xl bg-white overflow-hidden modal-content" style="height: 450px;">
+             <div class="flex justify-between py-4 border-b-2 items-center relative">
+               <div class="flex mx-auto gap-2">
+                 <i class="ri-message-2-line"></i>
+                 <h2 class="text-base text-c-black font-bold"> You've got a new message!</h2>
+               </div>
+              <i class="ri-close-circle-fill ri-lg cursor-pointer absolute right-3 top-3"></i>
             </div>
-            <div class="py-2">
-                <p>Dots</p>
-                <p>26-02-2024</p>
-                <p>14:20:21</p>
+            <div class="border-b-2">
+                <div class="flex items-center justify-between py-3 px-6">
+                  <div class="flex items-center gap-2">
+                    <img src="images/profile.png" alt="profile" class="w-10">
+                    <span class="text-c-black font-medium">John Doe</span>
+                  </div>
+                  <button class="text-c-yellow">Mark as read</button>
+                </div>
+                <div class="px-6 pb-2">
+                  <label for="message" class="text-c-black">Message:</label>
+                  <div id="message" class="h-48 text-sm overflow-y-scroll mini-scroll leading-normal">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with dsfsfsdfsdfdsfdsfsdfsfsfsf dsjfjsdjfjsdfjkb lsndfklnsnf fslknfklsnf sfnksnfklsnfs lsnlfknsf fnipsjfis sfksnfs fnlkfsnfn
+                  </div>
+                </div>
+            </div>
+            <div class="footer px-6 py-3">
+              <span class="date text-c-black text-sm">09/26/2024 at 3:00 PM</span>
+              <div class="text-sm text-c-black flex items-center gap-2 mt-2 flex-wrap">
+                <button class="border px-2 sm:px-4 py-0.5 border-c-light-black rounded flex items-center gap-1 sm:gap-2 font-medium">
+                  <i class="ri-corner-up-left-line"></i>
+                  Reply
+                </button>
+                <button class="border px-2 sm:px-4 py-0.5 border-c-light-black rounded flex items-center gap-1 sm:gap-2 font-medium">
+                  <i class="ri-corner-up-right-line"></i>
+                  Forward
+                </button>
+                <button class="border px-2 sm:px-4 py-0.5 border-c-light-black rounded flex items-center gap-1 sm:gap-2 font-medium">
+                  <i class="ri-delete-bin-line"></i>
+                  Delete
+                </button>
+              </div>
             </div>
         </div>
      </div>

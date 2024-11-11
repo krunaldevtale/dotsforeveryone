@@ -28,7 +28,7 @@ const graphDivInfo = [
 ]
 
 let currentGraphIndex = 0;
-const maxGraphs = 9; 
+const maxGraphs = 9;
 
 addBtn.addEventListener("click", function () {
     if (currentGraphIndex < graphDivInfo.length && currentGraphIndex < maxGraphs) {
@@ -846,8 +846,832 @@ addBtn.addEventListener("click", function () {
                                 </li>
                               </ul>
                           </div>
-
-
+                             <div class="chart-type border inline-block relative">
+                              <button class="chart-type-btn rounded px-6 py-1 custom-outline custom-safety-btn" id="chartTypeBtn1">Chart Type <i class="ri-arrow-down-s-fill"></i></button>
+                                <div class="chart-type-dropdown hidden">
+                                    <ul class=" chart-menu mini-scroll absolute text-c-black shadow bg-custom-pure-white text-xs overflow-hidden">
+                                    <li class="font-normal py-2 px-4">Line</li>
+                                    <li  class="font-normal py-2 px-4">Bar</li>
+                                    <li  class="font-normal  py-2 px-4">Area</li>
+                                    </ul>
+                                </div>
+                          </div>
+                            <div class="activity-dropdown inline-block relative">
+                                <button
+                                  class="second-activity-btn rounded px-6 py-1 custom-outline custom-safety-btn"
+                                >
+                                  <span>Activity Type</span>
+                                  <i class="ri-arrow-down-s-fill"></i>
+                                </button>
+                                <ul
+                                  class="second-activity-dropdown-menu activity-custom-dropdown-menu absolute hidden text-c-black shadow bg-custom-pure-white text-xs"
+                                >
+                                  <li id="user-duplicate" class="activity-item-duplicate user-activity">
+                                    <a
+                                      class="custom-bg-hover rounded-t py-2 px-4 block whitespace-no-wrap px-4"
+                                      href="#"
+                                      >User Activity</a
+                                    >
+                                  </li>
+                                  <li id="group-duplicate" class="dropdown-submenu group activity-item-duplicate group-activity">
+                                    <a
+                                      class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                      href="#"
+                                    >
+                                      Group Activity
+                                    </a>
+                                  </li>
+                                  <li id="rbac-duplicate" class="dropdown-submenu group activity-item-duplicate rbac-activity">
+                                    <a
+                                      class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                      href="#"
+                                    >
+                                      RBAC
+                                    </a>
+                                  </li>
+                                  <li id="filemanagement-duplicate" class="dropdown-submenu group activity-item-duplicate filemanagement-activity">
+                                    <a
+                                      class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                      href="#"
+                                    >
+                                      File management 
+                                    </a>
+                                  </li>
+                                  <li id="softwareusage-duplicate" class="dropdown-submenu group activity-item-duplicate softwareusage-activity">
+                                    <a
+                                      class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                      href="#"
+                                    >
+                                      Software Usage
+                                    </a>
+                                  </li>
+                                  <li id="locationbased-duplicate" class="dropdown-submenu group activity-item-duplicate locationbased-activity">
+                                    <a
+                                      class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                      href="#"
+                                    >
+                                      Location-Based Metrics 
+                                    </a>
+                                  </li>
+                                  <li id="systemperformance-duplicate" class="dropdown-submenu group activity-item-duplicate systemperformance-activity">
+                                    <a
+                                      class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                      href="#"
+                                    >
+                                      System Performance 
+                                    </a>
+                                  </li>
+                                  <li id="security-duplicate" class="dropdown-submenu group activity-item-duplicate security-activity">
+                                    <a
+                                      class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                      href="#"
+                                    >
+                                      Security
+                                    </a>
+                                  </li>
+                                  <li id="auditlogs-duplicate" class="dropdown-submenu group activity-item-duplicate auditlogs-activity">
+                                    <a
+                                      class="rounded-b custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                      href="#"
+                                    >
+                                      Audit Logs
+                                    </a>
+                                  </li>
+                                </ul>
+                          </div>
+                           <div class="graph-dropdown inline-block relative">
+                                <button
+                                  class="second-select-graph rounded px-6 py-1 custom-outline custom-safety-btn user"
+                                >
+                                  <span>Select Graph</span>
+                                  <i class="ri-arrow-down-s-fill"></i>
+                                </button>
+                                <ul
+                                  class="user-activity-menu-duplicate graph-dropdown-menu graph-custom-dropdown-menu absolute hidden text-c-black shadow bg-custom-pure-white text-xs"
+                                >
+                                  <li id="user-login-over-time-duplicate">
+                                    <a
+                                      class="custom-bg-hover rounded-t py-2 px-4 block whitespace-no-wrap px-4"
+                                      href="#"
+                                      >User Logins Over Time</a
+                                    >
+                                  </li>
+                                  <li id="failed-login-attempt-duplicate" class="dropdown-submenu group">
+                                    <a
+                                      class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                      href="#"
+                                    >
+                                      Failed Login Attempts
+                                    </a>
+                                  </li>
+                                  <li id="successful-logout-duplicate" class="dropdown-submenu group">
+                                    <a
+                                      class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                      href="#"
+                                    >
+                                      Successful Logouts
+                                    </a>
+                                  </li>
+                                  <li class="dropdown-submenu group">
+                                    <a
+                                      class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                      href="#"
+                                    >
+                                      Average Session Duration per User
+                                    </a>
+                                  </li>
+                                  <li class="dropdown-submenu group">
+                                    <a
+                                      class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                      href="#"
+                                    >
+                                      Most Active Users
+                                    </a>
+                                  </li>
+                                  <li class="dropdown-submenu group">
+                                    <a
+                                      class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                      href="#"
+                                    >
+                                      Inactive Users
+                                    </a>
+                                  </li>
+                                  <li class="dropdown-submenu group">
+                                    <a
+                                      class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                      href="#"
+                                    >
+                                      File Accessed by Users 
+                                    </a>
+                                  </li>
+                                  <li class="dropdown-submenu group">
+                                    <a
+                                      class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                      href="#"
+                                    >
+                                    Files Downloaded by Users
+                                    </a>
+                                  </li>
+                                  <li class="dropdown-submenu group">
+                                    <a
+                                      class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                      href="#"
+                                    >
+                                    Files Uploaded by Users
+                                    </a>
+                                  </li>
+                                  <li class="dropdown-submenu group">
+                                    <a
+                                      class="rounded-b custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                      href="#"
+                                    >
+                                      File Types Accessed
+                                    </a>
+                                  </li>
+                                </ul>
+                                  <ul
+                                  class="group-activity-menu-duplicate graph-dropdown-menu graph-custom-dropdown-menu absolute hidden text-c-black shadow bg-custom-pure-white text-xs"
+                                >
+                                  <li>
+                                    <a
+                                      class="custom-bg-hover rounded-t py-2 px-4 block whitespace-no-wrap px-4"
+                                      href="#"
+                                      >Groups Created Over Time</a
+                                    >
+                                  </li>
+                                  <li class="dropdown-submenu group">
+                                    <a
+                                      class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                      href="#"
+                                    >
+                                      Group Activity Distribution
+                                    </a>
+                                  </li>
+                                  <li class="dropdown-submenu group">
+                                    <a
+                                      class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                      href="#"
+                                    >
+                                      Group File Access Patterns
+                                    </a>
+                                  </li>
+                                  <li class="dropdown-submenu group">
+                                    <a
+                                      class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                      href="#"
+                                    >
+                                    Number of Users in Groups
+                                    </a>
+                                  </li>
+                                  <li class="dropdown-submenu group">
+                                    <a
+                                      class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                      href="#"
+                                    >
+                                    Group Participation by Location
+                                    </a>
+                                  </li>
+                                  <li class="dropdown-submenu group">
+                                    <a
+                                      class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                      href="#"
+                                    >
+                                    File Sharing Between Groups
+                                    </a>
+                                  </li>
+                                  <li class="dropdown-submenu group">
+                                    <a
+                                      class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                      href="#"
+                                    >
+                                    External API Access by Groups
+                                    </a>
+                                  </li>
+                                  <li class="dropdown-submenu group">
+                                    <a
+                                      class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                      href="#"
+                                    >
+                                    Collaboration Patterns in Groups
+                                    </a>
+                                  </li>
+                                  <li class="dropdown-submenu group">
+                                    <a
+                                      class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                      href="#"
+                                    >
+                                  Inactive Groups
+                                    </a>
+                                  </li>
+                                  <li class="dropdown-submenu group">
+                                    <a
+                                      class="rounded-b custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                      href="#"
+                                    >
+                                    Group Ownership Changes
+                                    </a>
+                                  </li>
+                                </ul>
+                                <ul
+                                class="rbac-activity-menu-duplicate graph-dropdown-menu graph-custom-dropdown-menu absolute hidden text-c-black shadow bg-custom-pure-white text-xs"
+                              >
+                                <li>
+                                  <a
+                                    class="custom-bg-hover rounded-t py-2 px-4 block whitespace-no-wrap px-4"
+                                    href="#"
+                                    >Roles Created Over Time</a
+                                  >
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                    Permission Changes by Roles
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                    Privileges Per Role
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                  Role Usage by Time
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                  Users Assigned to Roles
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                 Files Accessed by Role
+                                  </a>
+                                </li>
+                              </ul>
+                               <ul
+                                class="filemanagement-activity-menu-duplicate graph-dropdown-menu graph-custom-dropdown-menu absolute hidden text-c-black shadow bg-custom-pure-white text-xs"
+                              >
+                                <li>
+                                  <a
+                                    class="custom-bg-hover rounded-t py-2 px-4 block whitespace-no-wrap px-4"
+                                    href="#"
+                                    >Files Accessed Over Time</a
+                                  >
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                    Most Accessed Files
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                    Average File Access Time
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                  File Modifications
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                  Deleted Files Over Time
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                  File Access by Location
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                  Unauthorized File Access
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                  Large File Transfers
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                Sensitive File Access
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="rounded-b custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                  Files Accessed Outside Business Hours
+                                  </a>
+                                </li>
+                              </ul>
+                               <ul
+                                class="softwareusage-activity-menu-duplicate graph-dropdown-menu graph-custom-dropdown-menu absolute hidden text-c-black shadow bg-custom-pure-white text-xs"
+                              >
+                                <li>
+                                  <a
+                                    class="custom-bg-hover rounded-t py-2 px-4 block whitespace-no-wrap px-4"
+                                    href="#"
+                                    >Software Installations</a
+                                  >
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                    Software Engagement by Users
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                    Version Updates Over Time
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                  Software Crashes
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                  Software Usage Patterns by Users
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                  License Expirations
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                  Software Used in Multiple Locations
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                  Software Vulnerabilities Exploited
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                Software Access Frequency
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="rounded-b custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                  Error Rates by Software
+                                  </a>
+                                </li>
+                              </ul>
+                              <ul
+                                class="locationbased-activity-menu-duplicate graph-dropdown-menu graph-custom-dropdown-menu absolute hidden text-c-black shadow bg-custom-pure-white text-xs"
+                              >
+                                <li>
+                                  <a
+                                    class="custom-bg-hover rounded-t py-2 px-4 block whitespace-no-wrap px-4"
+                                    href="#"
+                                    >User Access by Country</a
+                                  >
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                    Latency by Location
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                    File Access by Country
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                  Failed File Transfers by Location
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                  Bandwidth Utilization by Location
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                  User Activity Patterns by Country
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                  File Sharing Between Countries
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                  Data Transfer Rates by Region
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                Network Latency by Time Zone
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="rounded-b custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                  Access from Unusual Locations
+                                  </a>
+                                </li>
+                              </ul>
+                              <ul
+                                class="systemperformance-activity-menu-duplicate graph-dropdown-menu graph-custom-dropdown-menu absolute hidden text-c-black shadow bg-custom-pure-white text-xs"
+                              >
+                                <li>
+                                  <a
+                                    class="custom-bg-hover rounded-t py-2 px-4 block whitespace-no-wrap px-4"
+                                    href="#"
+                                    >CPU Usage Over Time</a
+                                  >
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                   RAM Usage Over Time
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                    Disk I/O Rates
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                  Network Traffic
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                  Database Query Response Times
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                  System Error Rates
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                  System Uptime
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                  Server Response Time by Location
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                I/O Wait Time Distribution
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="rounded-b custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                  Resource Utilization per User
+                                  </a>
+                                </li>
+                              </ul>
+                              <ul
+                                class="security-activity-menu-duplicate graph-dropdown-menu graph-custom-dropdown-menu absolute hidden text-c-black shadow bg-custom-pure-white text-xs"
+                              >
+                                <li>
+                                  <a
+                                    class="custom-bg-hover rounded-t py-2 px-4 block whitespace-no-wrap px-4"
+                                    href="#"
+                                    >Security Incidents Over Time</a
+                                  >
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                   Unauthorized Network Access
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                    Intrusion Detection Alerts
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                  VPN Usage by Users
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                  Failed File Encryption Attempts
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                  Malware Infections
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                 Patches Applied Over Time
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                  Firewall Block Events
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                Suspicious Activity in Logs
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="rounded-b custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                  System Vulnerability Scans
+                                  </a>
+                                </li>
+                              </ul>
+                              <ul
+                                class="auditlogs-activity-menu-duplicate graph-dropdown-menu graph-custom-dropdown-menu absolute hidden text-c-black shadow bg-custom-pure-white text-xs"
+                              >
+                                <li>
+                                  <a
+                                    class="custom-bg-hover rounded-t py-2 px-4 block whitespace-no-wrap px-4"
+                                    href="#"
+                                    >File Access History</a
+                                  >
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                   User Session History
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                    User Privilege Changes
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                  Data Transfer Logs
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                  Deleted Files Audit
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                  Group Activity Logs
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                 Software Usage History
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                  Role Assignment Changes
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                Unauthorized Access Logs
+                                  </a>
+                                </li>
+                                <li class="dropdown-submenu group">
+                                  <a
+                                    class="rounded-b custom-bg-hover py-2 px-4 block whitespace-no-wrap flex justify-between items-center"
+                                    href="#"
+                                  >
+                                  System Backup Logs
+                                  </a>
+                                </li>
+                              </ul>
+                          </div>
+                            <div class="chart-type border inline-block relative">
+                              <button class="chart-type-btn rounded px-6 py-1 custom-outline custom-safety-btn" id="chartTypeBtn1">Chart Type <i class="ri-arrow-down-s-fill"></i></button>
+                                <div class="chart-type-dropdown hidden">
+                                    <ul class=" chart-menu mini-scroll absolute text-c-black shadow bg-custom-pure-white text-xs overflow-hidden">
+                                    <li class="font-normal py-2 px-4">Line</li>
+                                    <li  class="font-normal py-2 px-4">Bar</li>
+                                    <li  class="font-normal  py-2 px-4">Area</li>
+                                    </ul>
+                                </div>
+                          </div>
                           <div class="data-label-dropdown inline-block relative ">
                                 <button 
                                   class="label-btn rounded px-6 py-1 custom-outline custom-safety-btn"
@@ -927,7 +1751,7 @@ addBtn.addEventListener("click", function () {
         // Append the new div to the graph container
         graphContainer.appendChild(newDiv);
 
-       
+
 
         // Increment the current graph index to add the next graph on the next click
         currentGraphIndex++;
@@ -941,16 +1765,16 @@ addBtn.addEventListener("click", function () {
         console.log("All graphs have been added.");
     }
 });
-  
+
 
 
 function initializeDropdowns(filterClass) {
-  const activityBtn = document.querySelectorAll(`${filterClass} .activity-btn`);
-  const secondActivityBtn = document.querySelectorAll(`${filterClass} .second-activity-btn`);
-  const activityDropdownMenu = document.querySelectorAll(`${filterClass} .activity-dropdown-menu`);
-  const secondActivityDropdownMenu = document.querySelectorAll(`${filterClass} .second-activity-dropdown-menu`);
-  const selectGraphButton = document.querySelectorAll(`${filterClass} .select-graph`);
-  const secondSelectGraphButton = document.querySelectorAll(`${filterClass} .second-select-graph`);
+    const activityBtn = document.querySelectorAll(`${filterClass} .activity-btn`);
+    const secondActivityBtn = document.querySelectorAll(`${filterClass} .second-activity-btn`);
+    const activityDropdownMenu = document.querySelectorAll(`${filterClass} .activity-dropdown-menu`);
+    const secondActivityDropdownMenu = document.querySelectorAll(`${filterClass} .second-activity-dropdown-menu`);
+    const selectGraphButton = document.querySelectorAll(`${filterClass} .select-graph`);
+    const secondSelectGraphButton = document.querySelectorAll(`${filterClass} .second-select-graph`);
     const graphDropdownMenus = {
         user: document.querySelector(`${filterClass} .user-activity-menu`),
         group: document.querySelector(`${filterClass} .group-activity-menu`),
@@ -961,34 +1785,34 @@ function initializeDropdowns(filterClass) {
         systemperformance: document.querySelector(`${filterClass} .systemperformance-activity-menu`),
         security: document.querySelector(`${filterClass} .security-activity-menu`),
         auditlogs: document.querySelector(`${filterClass} .auditlogs-activity-menu`),
-        
-  };
-  const secondGraphDropdownMenus = {
-    user: document.querySelector(`${filterClass} .user-activity-menu-duplicate`),
-    group: document.querySelector(`${filterClass} .group-activity-menu-duplicate`),
-    rbac: document.querySelector(`${filterClass} .rbac-activity-menu-duplicate`),
-    filemanagement: document.querySelector(`${filterClass} .filemanagement-activity-menu-duplicate`),
-    softwareusage: document.querySelector(`${filterClass} .softwareusage-activity-menu-duplicate`),
-    locationbased: document.querySelector(`${filterClass} .locationbased-activity-menu-duplicate`),
-    systemperformance: document.querySelector(`${filterClass} .systemperformance-activity-menu-duplicate`),
-    security: document.querySelector(`${filterClass} .security-activity-menu-duplicate`),
-    auditlogs: document.querySelector(`${filterClass} .auditlogs-activity-menu-duplicate`),
 
-  };
+    };
+    const secondGraphDropdownMenus = {
+        user: document.querySelector(`${filterClass} .user-activity-menu-duplicate`),
+        group: document.querySelector(`${filterClass} .group-activity-menu-duplicate`),
+        rbac: document.querySelector(`${filterClass} .rbac-activity-menu-duplicate`),
+        filemanagement: document.querySelector(`${filterClass} .filemanagement-activity-menu-duplicate`),
+        softwareusage: document.querySelector(`${filterClass} .softwareusage-activity-menu-duplicate`),
+        locationbased: document.querySelector(`${filterClass} .locationbased-activity-menu-duplicate`),
+        systemperformance: document.querySelector(`${filterClass} .systemperformance-activity-menu-duplicate`),
+        security: document.querySelector(`${filterClass} .security-activity-menu-duplicate`),
+        auditlogs: document.querySelector(`${filterClass} .auditlogs-activity-menu-duplicate`),
+
+    };
 
 
-  let selectedActivity = '';
-  let secondSelectedActivity = '';// To keep track of the selected activity
+    let selectedActivity = '';
+    let secondSelectedActivity = '';// To keep track of the selected activity
 
     selectGraphButton.forEach(button => {
         button.disabled = true;
         button.classList.add('disabled-btn');
     });
-  
-  secondSelectGraphButton.forEach(button => {
-    button.disabled = true;
-    button.classList.add('disabled-btn');
-  });
+
+    secondSelectGraphButton.forEach(button => {
+        button.disabled = true;
+        button.classList.add('disabled-btn');
+    });
 
     // Activity type dropdown toggle
     activityBtn.forEach((button, index) => {
@@ -1005,21 +1829,21 @@ function initializeDropdowns(filterClass) {
             menu.classList.toggle("hidden");
         });
     });
-  
-  secondActivityBtn.forEach((button, index) => {
-    const menu = secondActivityDropdownMenu[index];
-    button.addEventListener('click', function (event) {
-      event.stopPropagation();
-      // Close other dropdowns
-      secondActivityDropdownMenu.forEach((otherMenu, otherIndex) => {
-        if (otherIndex !== index) {
-          otherMenu.classList.add("hidden");
-        }
-      });
-      // Toggle the current menu
-      menu.classList.toggle("hidden");
+
+    secondActivityBtn.forEach((button, index) => {
+        const menu = secondActivityDropdownMenu[index];
+        button.addEventListener('click', function (event) {
+            event.stopPropagation();
+            // Close other dropdowns
+            secondActivityDropdownMenu.forEach((otherMenu, otherIndex) => {
+                if (otherIndex !== index) {
+                    otherMenu.classList.add("hidden");
+                }
+            });
+            // Toggle the current menu
+            menu.classList.toggle("hidden");
+        });
     });
-  });
 
 
     // Handle activity item selection
@@ -1045,30 +1869,30 @@ function initializeDropdowns(filterClass) {
             });
         });
     });
-  
-  document.querySelectorAll(`${filterClass} .activity-item-duplicate`).forEach(function (item) {
-    item.addEventListener('click', function (e) {
-      e.stopPropagation(); // Prevent event propagation
-      // Remove active class from all activity items
-      document.querySelectorAll(`${filterClass} .activity-item-duplicate`).forEach(el => el.classList.remove('bg-c-yellow'));
-      // Add active class to the selected item
-      item.classList.add('bg-c-yellow');
-      // Get selected activity's ID
-      secondSelectedActivity = item.id.replace('-duplicate', '');
-      console.log("Selected second activity: ", secondSelectedActivity);
-      // Enable the Select Graph button
-      secondSelectGraphButton.forEach(button => {
-        button.disabled = false;
-        button.classList.remove('disabled-btn');
-      });
-      // Hide the activity dropdown after selection
-      secondActivityDropdownMenu.forEach(menu => menu.classList.add('hidden'));
-      // Hide all graph dropdown menus
-      Object.values(secondGraphDropdownMenus).forEach(menu => {
-        menu.classList.add("hidden");
-      });
+
+    document.querySelectorAll(`${filterClass} .activity-item-duplicate`).forEach(function (item) {
+        item.addEventListener('click', function (e) {
+            e.stopPropagation(); // Prevent event propagation
+            // Remove active class from all activity items
+            document.querySelectorAll(`${filterClass} .activity-item-duplicate`).forEach(el => el.classList.remove('bg-c-yellow'));
+            // Add active class to the selected item
+            item.classList.add('bg-c-yellow');
+            // Get selected activity's ID
+            secondSelectedActivity = item.id.replace('-duplicate', '');
+            console.log("Selected second activity: ", secondSelectedActivity);
+            // Enable the Select Graph button
+            secondSelectGraphButton.forEach(button => {
+                button.disabled = false;
+                button.classList.remove('disabled-btn');
+            });
+            // Hide the activity dropdown after selection
+            secondActivityDropdownMenu.forEach(menu => menu.classList.add('hidden'));
+            // Hide all graph dropdown menus
+            Object.values(secondGraphDropdownMenus).forEach(menu => {
+                menu.classList.add("hidden");
+            });
+        });
     });
-  });
 
 
     // Handle Select Graph button click
@@ -1090,27 +1914,27 @@ function initializeDropdowns(filterClass) {
         });
     });
 
-  secondSelectGraphButton.forEach(button => {
-    button.addEventListener("click", function (event) {
-      event.stopPropagation();
-      if (!secondSelectedActivity) return; // Do nothing if no activity is selected
-      // Toggle the current graph menu based on the selected activity
-      console.log("Selected second activity before showing menu: ", secondSelectedActivity);
-      const currentGraphMenu = secondGraphDropdownMenus[secondSelectedActivity];
-      if (currentGraphMenu) {
-        const isVisible = !currentGraphMenu.classList.contains("hidden");
-        Object.values(secondGraphDropdownMenus).forEach(menu => {
-          menu.classList.add("hidden"); // Hide all second set of graph menus
+    secondSelectGraphButton.forEach(button => {
+        button.addEventListener("click", function (event) {
+            event.stopPropagation();
+            if (!secondSelectedActivity) return; // Do nothing if no activity is selected
+            // Toggle the current graph menu based on the selected activity
+            console.log("Selected second activity before showing menu: ", secondSelectedActivity);
+            const currentGraphMenu = secondGraphDropdownMenus[secondSelectedActivity];
+            if (currentGraphMenu) {
+                const isVisible = !currentGraphMenu.classList.contains("hidden");
+                Object.values(secondGraphDropdownMenus).forEach(menu => {
+                    menu.classList.add("hidden"); // Hide all second set of graph menus
+                });
+                if (!isVisible) {
+                    currentGraphMenu.classList.remove("hidden"); // Show the current menu if it was hidden
+                }
+                else {
+                    console.log("Graph menu not found for selected activity: ", secondSelectedActivity);
+                }
+            }
         });
-        if (!isVisible) {
-          currentGraphMenu.classList.remove("hidden"); // Show the current menu if it was hidden
-        }
-        else {
-          console.log("Graph menu not found for selected activity: ", secondSelectedActivity);
-        }
-      }
     });
-  });
 
 
     // Close dropdowns when clicking outside
@@ -1121,80 +1945,81 @@ function initializeDropdowns(filterClass) {
                 menu.classList.add("hidden");
             }
         });
-      
-      secondActivityDropdownMenu.forEach(menu => {
-        if (!menu.classList.contains("hidden")) {
-          menu.classList.add("hidden");
-        }
-      });
-      
+
+        secondActivityDropdownMenu.forEach(menu => {
+            if (!menu.classList.contains("hidden")) {
+                menu.classList.add("hidden");
+            }
+        });
+
         // Hide all graph dropdowns
         Object.values(graphDropdownMenus).forEach(menu => {
             if (!menu.classList.contains("hidden")) {
                 menu.classList.add("hidden");
             }
         });
-      
-      Object.values(secondGraphDropdownMenus).forEach(menu => {
-        if (!menu.classList.contains("hidden")) {
-          menu.classList.add("hidden");
-        }
-      });
+
+        Object.values(secondGraphDropdownMenus).forEach(menu => {
+            if (!menu.classList.contains("hidden")) {
+                menu.classList.add("hidden");
+            }
+        });
     });
 
     document.querySelector('.close-graph').addEventListener('click', function (e) {
-            e.stopPropagation();
+        e.stopPropagation();
 
-      document.querySelector(".graph-hidden-area").classList.add('hidden')
-      document.querySelector(".suggestion").classList.remove("hidden")
+        document.querySelector(".graph-hidden-area").classList.add('hidden')
+        document.querySelector(".suggestion").classList.remove("hidden")
 
-        });
+    });
 
     document.querySelectorAll('.close-graph-div').forEach(function (closeBtn) {
-        
+
         closeBtn.addEventListener('click', function (e) {
             e.stopPropagation();
-            
+
             // Hide the parent graph container
             closeBtn.closest(".graph-div").classList.add('hidden');
 
         });
     });
-  
-  document.querySelectorAll('.chart-type-btn').forEach((button, index) => {
-    button.addEventListener('click', function (e) {
-      e.stopPropagation();
 
-      const dropdown = document.querySelector(`#chartTypeDropdown${index + 1}`);
-      const allDropdowns = document.querySelectorAll('.chart-type-dropdown');
+    document.querySelectorAll('.chart-type-btn').forEach((button) => {
+        button.addEventListener('click', function (e) {
+            e.stopPropagation();
 
-      // Close all other dropdowns
-      allDropdowns.forEach(d => {
-        if (d !== dropdown) {
-          d.classList.add('hidden');
+            // Get the sibling dropdown of the clicked button
+            const dropdown = button.nextElementSibling;
+
+            // Close all other dropdowns
+            document.querySelectorAll('.chart-type-dropdown').forEach(d => {
+                if (d !== dropdown) {
+                    d.classList.add('hidden');
+                }
+            });
+
+            // Toggle the current dropdown
+            dropdown.classList.toggle('hidden');
+        });
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function (e) {
+        if (!e.target.closest('.chart-type-container')) {
+            document.querySelectorAll('.chart-type-dropdown').forEach(dropdown => {
+                dropdown.classList.add('hidden');
+            });
         }
-      });
-
-      // Toggle the current dropdown
-      dropdown.classList.toggle('hidden');
     });
-  });
 
-  // Close dropdown when clicking outside
-  document.addEventListener('click', function (e) {
-    if (!e.target.closest('.chart-type-container')) {
-      document.querySelectorAll('.chart-type-dropdown').forEach(dropdown => {
-        dropdown.classList.add('hidden');
-      });
-    }
-  });
-
-  // Handle item selection
-  document.querySelectorAll('.chart-type-dropdown li').forEach(item => {
-    item.addEventListener('click', function () {
-      alert(`Selected chart type: ${item.textContent}`);
+    // Handle item selection
+    document.querySelectorAll('.chart-type-dropdown li').forEach(item => {
+        item.addEventListener('click', function () {
+            alert(`Selected chart type: ${item.textContent}`);
+        });
     });
-  });
+
 
 
 }

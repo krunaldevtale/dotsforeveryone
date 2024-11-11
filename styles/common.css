@@ -579,6 +579,21 @@ body .cm {
   z-index: 1;
 }
 
+.cm .chart-menu {
+  border-radius: 5px;
+  border: 1px solid rgba(104, 134, 134, 0.53);
+  background: var(--color-lighten-gray);
+  margin-top: 1px;
+  width: 9rem;
+  height: 4.6rem;
+  z-index: 1;
+  overflow-y: scroll;
+}
+
+.cm .chart-menu li:hover{
+background-color: #fdcf01;
+}
+
 .cm .activity-custom-dropdown-menu::-webkit-scrollbar {
   display: none;
 }
