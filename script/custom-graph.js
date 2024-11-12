@@ -40,7 +40,10 @@ addBtn.addEventListener("click", function () {
         // Add the graph layout for this filter
         newDiv.classList.add("graph-div", "p-4", "w-full");
         newDiv.innerHTML += ` <div class="${e.filterName} flex items-center gap-2 flex-wrap">
-                          <div class="activity-dropdown inline-block relative">
+                              <div class="flex items-center justify-center gap-5">
+                            <div class="border border-c-light-black rounded-md px-1.5 py-2 flex flex-col items-center justify-center gap-3 sm:block">
+                          <h1 class="text-center pb-2 font-bold text-c-black">Matrix One</h1>
+                           <div class="activity-dropdown inline-block relative">
                                 <button
                                   class="activity-btn rounded px-6 py-1 custom-outline custom-safety-btn"
                                 >
@@ -123,14 +126,14 @@ addBtn.addEventListener("click", function () {
                                   </li>
                                 </ul>
                           </div>
-                           <div class="graph-dropdown inline-block relative">
+                          <div class="graph-dropdown inline-block relative">
                                 <button
                                   class="select-graph rounded px-6 py-1 custom-outline custom-safety-btn user"
                                 >
                                   <span>Select Graph</span>
                                   <i class="ri-arrow-down-s-fill"></i>
                                 </button>
-                                 <ul
+                                <ul
                                   class="user-activity-menu graph-dropdown-menu graph-custom-dropdown-menu absolute hidden text-c-black shadow bg-custom-pure-white text-xs"
                                 >
                                   <li id="user-login-over-time">
@@ -846,7 +849,7 @@ addBtn.addEventListener("click", function () {
                                 </li>
                               </ul>
                           </div>
-                             <div class="chart-type border inline-block relative">
+                          <div class="chart-type border inline-block relative">
                               <button class="chart-type-btn rounded px-6 py-1 custom-outline custom-safety-btn" id="chartTypeBtn1">Chart Type <i class="ri-arrow-down-s-fill"></i></button>
                                 <div class="chart-type-dropdown hidden">
                                     <ul class=" chart-menu mini-scroll absolute text-c-black shadow bg-custom-pure-white text-xs overflow-hidden">
@@ -856,7 +859,10 @@ addBtn.addEventListener("click", function () {
                                     </ul>
                                 </div>
                           </div>
-                            <div class="activity-dropdown inline-block relative">
+                        </div>
+                        <div class="border border-c-light-black rounded-md px-1.5 py-2 flex flex-col items-center justify-center gap-3 sm:block">
+                           <h1 class="text-center pb-2 font-bold text-c-black">Matrix Two</h1>
+                          <div class="activity-dropdown inline-block relative">
                                 <button
                                   class="second-activity-btn rounded px-6 py-1 custom-outline custom-safety-btn"
                                 >
@@ -1662,19 +1668,22 @@ addBtn.addEventListener("click", function () {
                                 </li>
                               </ul>
                           </div>
-                            <div class="chart-type border inline-block relative">
-                              <button class="chart-type-btn rounded px-6 py-1 custom-outline custom-safety-btn" id="chartTypeBtn1">Chart Type <i class="ri-arrow-down-s-fill"></i></button>
+                           <div class="chart-type border inline-block relative">
+                              <button class="chart-type-btn rounded px-6 py-1 custom-outline custom-safety-btn" id="chartTypeBtn2">Chart Type <i class="ri-arrow-down-s-fill"></i></button>
                                 <div class="chart-type-dropdown hidden">
-                                    <ul class=" chart-menu mini-scroll absolute text-c-black shadow bg-custom-pure-white text-xs overflow-hidden">
-                                    <li class="font-normal py-2 px-4">Line</li>
-                                    <li  class="font-normal py-2 px-4">Bar</li>
+                                    <ul class=" chart-menu absolute mini-scroll text-c-black shadow bg-custom-pure-white text-xs overflow-hidden">
+                                    <li class="font-normal  py-2 px-4">Line</li>
+                                    <li  class="font-normal  py-2 px-4">Bar</li>
                                     <li  class="font-normal  py-2 px-4">Area</li>
                                     </ul>
                                 </div>
                           </div>
-                          <div class="data-label-dropdown inline-block relative ">
+                        </div>
+                        </div>
+                        <div>
+                                <div class="data-label-dropdown inline-block relative ">
                                 <button 
-                                  class="label-btn rounded px-6 py-1 custom-outline custom-safety-btn"
+                                  class="label-btn rounded px-6 py-1 custom-outline custom-safety-btn mt-2 sm:mt-0"
                                 >
                                   <span>Data Label</span>
                                   <i class="ri-arrow-down-s-fill"></i>
@@ -1700,26 +1709,26 @@ addBtn.addEventListener("click", function () {
                                 </ul>
                           </div>
                           <button
-                            class="custom-safety-btn rounded px-6 py-1 mr-1 hover:border-yellow-300"
+                            class="custom-safety-btn rounded px-6 py-1 mr-1 hover:border-yellow-300 mt-2 sm:mt-0"
                           >
                             Today
                           </button>
                           <button
-                            class="custom-safety-btn focus:border-yellow-500 rounded px-6 py-1 mr-1 hover:border-yellow-300"
+                            class="custom-safety-btn focus:border-yellow-500 rounded px-6 py-1 mr-1 hover:border-yellow-300 mt-2 sm:mt-0"
                           >
                             Last 7 days
                           </button>
                           <button
-                            class="custom-safety-btn rounded px-6 py-1 mr-1 hover:border-yellow-300"
+                            class="custom-safety-btn rounded px-6 py-1 mr-1 hover:border-yellow-300 mt-2 sm:mt-0"
                           >
                             Last 30 days
                           </button>
                           <button
-                            class="custom-safety-btn rounded px-6 py-1 mr-1 hover:border-yellow-300"
+                            class="custom-safety-btn rounded px-6 py-1 mr-1 hover:border-yellow-300 mt-2 sm:mt-0"
                           >
                             Custom Date
                           </button>   
-                      </div>
+                        </div>
                        <div class="graph-area rounded mt-6">
                          <div class="pr-3 pt-4 flex gap-3 justify-end">
                             <i class="ri-eye-off-fill ri-lg" id="md-trigger"></i>

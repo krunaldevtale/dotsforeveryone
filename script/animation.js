@@ -107,10 +107,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function enableDrag(icon) {
+        let isDragging = false;
+        let dragStartX = 0;
+        let initialLeft = 0;
+        const toolbar = document.getElementById('toolbar');
+
         icon.addEventListener('mousedown', (e) => {
             isDragging = true;
             dragStartX = e.clientX;
-            initialLeft = icon.offsetLeft;
+            const iconRect = icon.getBoundingClientRect();
+            initialLeft = iconRect.left; // Track initial position using getBoundingClientRect
 
             document.addEventListener('mousemove', onMouseMove);
             document.addEventListener('mouseup', onMouseUp);
@@ -118,9 +124,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function onMouseMove(e) {
             if (isDragging) {
-                const moveX = e.clientX - dragStartX;
+                const moveX = e.clientX - dragStartX; // Calculate movement distance
                 icon.style.position = 'absolute';
-                icon.style.left = `${initialLeft + moveX}px`;
+                icon.style.left = `${initialLeft + moveX}px`; // Dynamically set the left position
             }
         }
 
@@ -135,30 +141,34 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function adjustIconPosition(draggedIcon) {
+        const toolbar = document.getElementById('toolbar');
         const icons = Array.from(toolbar.querySelectorAll('img.app-icon'));
         const draggedIconRect = draggedIcon.getBoundingClientRect();
 
+        // Remove the dragged icon temporarily from the icons list
         icons.splice(icons.indexOf(draggedIcon), 1);
 
+        // Determine where the dragged icon should be inserted
         let insertIndex = icons.findIndex(icon => {
             const iconRect = icon.getBoundingClientRect();
-            return draggedIconRect.left < iconRect.left;
+            return draggedIconRect.left < iconRect.left; // Check position of dragged icon relative to other icons
         });
 
         if (insertIndex === -1) {
-            insertIndex = icons.length;
+            insertIndex = icons.length; // If no insert index is found, append it at the end
         }
 
-        icons.splice(insertIndex, 0, draggedIcon);
+        icons.splice(insertIndex, 0, draggedIcon); // Insert the dragged icon at the calculated index
 
-        const totalWidth = icons.reduce((sum, icon) => sum + icon.getBoundingClientRect().width + 10, 0);
+        // Recalculate the toolbar's layout
+        const totalWidth = icons.reduce((sum, icon) => sum + icon.getBoundingClientRect().width + 10, 0); // Calculate total width of all icons
+        const toolbarCenter = (toolbar.clientWidth - totalWidth) / 2; // Center the icons in the toolbar
 
-        const toolbarCenter = (toolbar.clientWidth - totalWidth) / 2;
-
+        // Reposition all icons based on the new order
         icons.forEach((icon, index) => {
             const iconWidth = icon.getBoundingClientRect().width;
             icon.style.position = 'absolute';
-            icon.style.left = `${toolbarCenter + index * (iconWidth + 10)}px`;
+            icon.style.left = `${toolbarCenter + index * (iconWidth + 10)}px`; // Adjust the left position for each icon
         });
     }
 
