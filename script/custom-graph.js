@@ -39,7 +39,7 @@ addBtn.addEventListener("click", function () {
 
         // Add the graph layout for this filter
         newDiv.classList.add("graph-div", "p-4", "w-full");
-        newDiv.innerHTML += ` <div class="${e.filterName} flex items-center gap-2 flex-wrap">
+        newDiv.innerHTML += ` <div class="${e.filterName} flex items-center justify-center gap-2 flex-wrap">
                               <div class="flex items-center justify-center gap-5">
                             <div class="border border-c-light-black rounded-md px-1.5 py-2 flex flex-col items-center justify-center gap-3 sm:block">
                           <h1 class="text-center pb-2 font-bold text-c-black">Matrix One</h1>

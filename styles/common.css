@@ -454,13 +454,6 @@ body .cm {
   background-color: #f0eded;
 }
 
-.cm .graph-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 5fr));
-  gap: 1rem;
-
-}
-
 
 /* no dark outline on input focus */
 .cm input:focus,

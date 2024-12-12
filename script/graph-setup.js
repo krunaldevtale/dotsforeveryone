@@ -56,34 +56,34 @@ new Chart(ctx2, {
         datasets: [
             {
                 label: 'Total',
-                data: [65, 59, 80, 81, 56, 55, 40], // Data points for the first line
-                borderColor: 'rgba(255, 99, 132, 1)', // Line color
-                backgroundColor: 'rgba(255, 99, 132, 0.2)', // Fill color under the line
-                fill: true, // Whether to fill under the line
+                data: [65, 59, 80, 81, 56, 55, 40],
+                borderColor: 'rgba(255, 99, 132, 1)',
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                fill: true,
                 tension: 0.4
             },
             {
                 label: 'Actual',
-                data: [28, 48, 40, 19, 86, 27, 90], // Data points for the second line
-                borderColor: 'rgba(54, 162, 235, 1)', // Line color
-                backgroundColor: 'rgba(54, 162, 235, 0.2)', // Fill color under the line
-                fill: true, // Whether to fill under the line
+                data: [28, 48, 40, 19, 86, 27, 90],
+                borderColor: 'rgba(54, 162, 235, 1)',
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                fill: true,
                 tension: 0.4
             },
             {
                 label: 'User',
-                data: [18, 35, 60, 30, 70, 50, 80], // Data points for the third line
-                borderColor: 'rgba(75, 192, 192, 1)', // Line color
-                backgroundColor: 'rgba(75, 192, 192, 0.2)', // Fill color under the line
-                fill: true, // Whether to fill under the line
+                data: [18, 35, 60, 30, 70, 50, 80],
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                fill: true,
                 tension: 0.4
             },
             {
                 label: 'Group',
-                data: [30, 70, 50, 80, 18, 35, 60], // Data points for the third line
-                borderColor: 'rgba(75, 145, 142, 1)', // Line color
-                backgroundColor: 'rgba(75, 145, 142, 0.2)', // Fill color under the line
-                fill: true, // Whether to fill under the line
+                data: [30, 70, 50, 80, 18, 35, 60],
+                borderColor: 'rgba(75, 145, 142, 1)',
+                backgroundColor: 'rgba(75, 145, 142, 0.2)',
+                fill: true,
                 tension: 0.4
             }
         ]
@@ -93,14 +93,20 @@ new Chart(ctx2, {
         maintainAspectRatio: false,
         scales: {
             x: {
-                beginAtZero: true // Ensures the x-axis starts at zero
+                beginAtZero: true
             },
             y: {
-                beginAtZero: true // Ensures the y-axis starts at zero
+                beginAtZero: true
+            }
+        },
+        plugins: {
+            legend: {
+                display: false // This line hides the legend
             }
         }
     }
 });
+
 
 const ctx3 = document.getElementById('successful-logout-chart');
 
